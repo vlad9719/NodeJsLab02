@@ -1,0 +1,1 @@
+[{ "id": 1, "name": "Stock 1", "numberOfCells": 5 }, { "id": 2, "name": "Stock 2", "numberOfCells": 3 }, { "id": 3, "name": "Stock 3", "numberOfCells": 7 } ]
