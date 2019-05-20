@@ -44,7 +44,7 @@ Step 1. Check whether server is working using ```healthcheck``` endpoint with ``
 The endpoint's URL is as follows:
 
 ```
-localhost:8080/api/healthcheck
+GET localhost:8080/api/healthcheck
 ```
 
 The expected response is as follows:
@@ -70,8 +70,10 @@ You can find a valid ```renterId``` in records of ```records/renters.txt``` file
  and a valid ```stockId``` in records ```records/stocks.txt``` file. 
  
  But there's no need for you to lookup those IDs, you may just use following valid values
-  in your request.
+ in your request:
+  
 The valid ```renterId```s are numbers ```1```, ```2```, ```3``` and ```4``` .
+
 The valid ```stockId```s are numbers ```1```, ```2``` and ```3```.
 
 API expects you to send it JSON body like this:
@@ -84,7 +86,7 @@ API expects you to send it JSON body like this:
 }
 ```
 
-The expected response is as follows:
+The expected response looks like this:
 ```
 {
     {
@@ -117,7 +119,7 @@ API expects you to send JSON body like this:
 }
 ```
 
-The expected response is as follows:
+The expected response looks like this:
 ```
 {
     "removedContract": {
@@ -147,7 +149,7 @@ are numbers ```1```, ```2```, ```3``` and ```4``` :
 ```
 
 
-The expected response is as follows:
+The expected response looks like this:
 ```
 {
     "contracts": [
@@ -185,7 +187,7 @@ are numbers ```1```, ```2``` and```3```:
 ```
 
 
-The expected response is as follows:
+The expected response looks like this:
 ```
 {
     "contracts": [
