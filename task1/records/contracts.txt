@@ -1,1 +1,1 @@
-[{"renterId":1,"stockId":2,"rentalCost":8930,"createdAt":"19-4-2019"},{"renterId":2,"stockId":2,"rentalCost":8930,"createdAt":"19-4-2019"},{"renterId":4,"stockId":2,"rentalCost":8930,"createdAt":"19-4-2019"}]
+[]
