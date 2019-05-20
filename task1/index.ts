@@ -3,6 +3,7 @@ import addContract from './services/Contract/addContract';
 import removeContract from './services/Contract/removeContract';
 import getAllStocksByRenter from './services/Contract/getAllStocksByRenter';
 import getAllRentersByStock from "./services/Contract/getAllRentersByStock";
+import getCurrentDate from './services/getCurrentDate';
 
 const PORT: string = '8080';
 
@@ -11,6 +12,9 @@ const METHODS = {
     GET: 'GET',
     DELETE: 'DELETE'
 };
+
+let launchDate : Date;
+let launchDateString : string;
 
 const server = http.createServer((request, response) => {
     const method: string = request.method;
@@ -32,8 +36,12 @@ const server = http.createServer((request, response) => {
         switch (url) {
             case '/api/healthcheck':
                 if (method === METHODS.GET) {
+                    const now : Date = new Date();
+                    const serverRunningTime : number = now.valueOf() - launchDate.valueOf();
                     jsonResponse = JSON.stringify({
-                        'message': 'Server is running'
+                        'message': 'Server is running',
+                        'serverStartedRunningAt': launchDateString,
+                        'serverAlreadyRuns (ms)': serverRunningTime
                     });
                     response.end(jsonResponse);
                 }
@@ -100,4 +108,8 @@ const server = http.createServer((request, response) => {
     });
 });
 
-server.listen(PORT, () => console.log('Server is listening...'));
+server.listen(PORT, () => {
+    launchDate = new Date();
+    launchDateString = getCurrentDate();
+    console.log('Server is listening...');
+});
